@@ -29,10 +29,6 @@ This tool is designed to monitor local network interfaces and detect common secu
 
 ### Installation
 1. Clone the repository:
-   ```
-```text?code_stdout&code_event_index=6
-README.md created successfully.
-
 ```bash
    git clone [https://github.com/YourUsername/SentinelIDS.git](https://github.com/YourUsername/SentinelIDS.git)
    cd SentinelIDS
@@ -91,7 +87,3 @@ Insecure Protocol   22
 This tool was created for educational purposes and authorized network defense training. Only run packet sniffers and vulnerability scans on networks and devices you explicitly own or have permission to monitor.
 """
 
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(full_content)
-    
-print("README.md created successfully.")
