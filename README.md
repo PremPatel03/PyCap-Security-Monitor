@@ -1,49 +1,26 @@
-```
-```python?code_reference&code_event_index=6
-import base64
-
-readme_content_b64 = b"""
-IyBTZW50aW5lbElEUzogTGlnaHR3ZWlnaHQgTmV0d29yayBJbnRydXNpb24gRGV0ZWN0aW9uIFN5
-c3RlbQoKWyFbUHl0aG9uXShodHRwczovL2ltZy5zaGllbGRzLmlvL2JhZGdlL1B5dGhvbi0zLjgr
-LWJsdWUuc3ZnKV0oaHR0cHM6Ly93d3cucHl0aG9uLm9yZy8pClshW1NjYXB5XShodHRwczovL2lt
-Zy5zaGllbGRzLmlvL2JhZGdlL0xpYnJhcnktU2NhcHktcmVkLnN2ZyldKGh0dHBzOi8vc2NhcHku
-bmV0LykKWyFbU2VjdXJpdHldKGh0dHBzOi8vaW1nLnNoaWVsZHMuaW8vYmFkZ2UvRm9jdXMtTmV0
-d29ya19TZWN1cml0eS1ncmVlbi5zdmcpXSgpCgojIyDwn4yQIE92ZXJ2aWV3ClNlbnRpbmVsSURT
-IGlzIGEgY3VzdG9tLCBsaWdodHdlaWdodCBJbnRydXNpb24gRGV0ZWN0aW9uIFN5c3RlbSAoSURT
-KSBhbmQgdHJhZmZpYyBhbmFseXplciBidWlsdCBpbiBQeXRob24uIEl0IGNhcHR1cmVzIGxpdmUg
-bmV0d29yayB0cmFmZmljLCBkaXNzZWN0cyBUQ1AvSVAgcGFja2V0cyBpbiByZWFsLXRpbWUsIGFu
-ZCBsb2dzIGFub21hbG91cyBvciBpbnNlY3VyZSBuZXR3b3JrIGJlaGF2aW9yIHRvIGEgbG9jYWwg
-ZGF0YWJhc2UgZm9yIGZvcmVuc2ljIGFuYWx5c2lzLiAKClRoaXMgcHJvamVjdCB3YXMgZGV2ZWxv
-cGVkIHRvIGRlbW9uc3RyYXRlIGEgcHJhY3RpY2FsIHVuZGVyc3RhbmRpbmcgb2YgbG93LWxldmVs
-IG5ldHdvcmsgcHJvdG9jb2xzLCBwYWNrZXQgc25pZmZpbmcsIGFuZCBhdXRvbWF0ZWQgdGhyZWF0
-IGRldGVjdGlvbi4KCg==
-"""
-
-full_content = """# SentinelIDS: Lightweight Network Intrusion Detection System
-
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Scapy](https://img.shields.io/badge/Library-Scapy-red.svg)](https://scapy.net/)
 [![Security](https://img.shields.io/badge/Focus-Network_Security-green.svg)]()
 
-## 📌 Overview
+## Overview
 SentinelIDS is a custom, lightweight Intrusion Detection System (IDS) and traffic analyzer built in Python. It captures live network traffic, dissects TCP/IP packets in real-time, and logs anomalous or insecure network behavior to a local database for forensic analysis. 
 
 This project was developed to demonstrate a practical understanding of low-level network protocols, packet sniffing, and automated threat detection.
 
-## 🎯 Threat Model & Features
+## Threat Model & Features
 This tool is designed to monitor local network interfaces and detect common security misconfigurations and reconnaissance tactics:
 
 * **Insecure Protocol Detection:** Actively monitors for cleartext protocols (e.g., HTTP on Port 80, FTP on Port 21) that leave data vulnerable to man-in-the-middle (MitM) credential harvesting.
 * **Reconnaissance Detection (Port Scans):** Implements state-tracking to detect aggressive Nmap-style port scans (e.g., identifying when a single source IP touches multiple unique ports within a 3-second window).
 * **Automated SIEM Reporting:** Includes a secondary script (`generate_report.py`) that acts as a localized Security Information and Event Management (SIEM) dashboard, querying the SQLite database to generate actionable forensic summaries.
 
-## 🛠️ Technology Stack
+## Technology Stack
 * **Language:** Python 3
 * **Packet Manipulation:** Scapy
 * **Database:** SQLite3 (Local logging)
 * **Data Analysis:** Pandas (For forensic reporting)
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 * Python 3.8 or higher.
@@ -65,7 +42,7 @@ README.md created successfully.
    pip install scapy pandas
    ```
 
-## 💻 Usage
+## Usage
 
 ### 1. Start the IDS
 Because the script requires raw socket access, you must run it with elevated privileges.
@@ -83,7 +60,7 @@ Once traffic has been captured, stop the IDS (`Ctrl+C`) and run the reporting to
 python generate_report.py
 ```
 
-## 📊 Example Output
+## Example Output
 **Real-Time Logging:**
 ```text
 [!] 2026-05-25 14:30:22 | Insecure Protocol | 192.168.1.15 -> 104.21.23.55 | Unencrypted HTTP traffic (Port 80).
