@@ -30,7 +30,7 @@ This tool is designed to monitor local network interfaces and detect common secu
 ### Installation
 1. Clone the repository:
 ```bash
-   git clone [https://github.com/YourUsername/SentinelIDS.git](https://github.com/YourUsername/SentinelIDS.git)
+   git clone [[https://github.com/YourUsername/SentinelIDS.git](https://github.com/PremPatel03/PyCap-Security-Monitor)]([https://github.com/YourUsername/SentinelIDS.git](https://github.com/PremPatel03/PyCap-Security-Monitor))
    cd SentinelIDS
    ```
 2. Install the required Python libraries:
